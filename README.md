@@ -1,2 +1,2 @@
-# Leetcode \n
+# Leetcode
 My Leetcode Solutions
