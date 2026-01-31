@@ -92,7 +92,7 @@ class LRUCache : public Cache {
             // find if key exists and set
             if (mp.find(key) != mp.end()) {
                 Node* node = mp[key];
-                node->value = value;
+                node->value = value; // needed because set(key, value) changes the value
                 removeNode(node);
                 insertNode(node);
             }
