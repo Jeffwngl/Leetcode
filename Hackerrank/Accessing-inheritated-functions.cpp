@@ -125,3 +125,18 @@ int main()
     d.check(new_val);
 
 }
+
+// Editorial
+//
+// Every integer > 1 can be written as a product of prime numbers, every case is also unique except for the order.
+// That is new_value = 2^a * 3^b * 5^c, then for an example, factoring 90 continously, (9, 10) -> (3, 3, 2, 5)...
+// will lead to the same group of prime numbers, for proof that the prime factorization is unique, assume a case
+// where they are not unique, say X = p1 p2 p3 p4...pn, as well as a case for another prime factorization X = p'1 
+// p'2 ... p'n. Taking p1 p2 ... pn = p'1 p'2 ... p'n, we know that both sides are made of primes and thus integers,
+// thus both sides result in an integer, dividing the RHS by p1 gives (p'1 ... p'n) / p1 = an integer value, as the 
+// p'1 to p'n prime are all prime numbers, then p1 must also exist in the set such that p1 = p'k, dividing the RHS
+// by each number on the LHS, we will end up with p1 = p'k, p2 = p'j ... for simplicities sake, we have p1 = p'1, 
+// p2 = p'2 ... proving our point.
+//
+// For a case where the RHS has more primes than the LHS or vice versa, it will lead to a case like 1 = p'n + 1,
+// p'n + 2... which is invalid.
