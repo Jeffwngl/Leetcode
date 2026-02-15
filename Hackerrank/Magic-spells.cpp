@@ -131,3 +131,14 @@ int main() {
     }
     return 0;
 }
+
+//Editorial
+//This question uses dp to solve the last part where the spell is not found, we construct a grid from 0 to length of s and from 0 to length of j called dp.
+//Then, dp[i][j] is the maximum subsequence from s[0] to s[i - 1] and likewise for t except using j, the rows and columns dp[i][0] and dp[0][j] are all 0
+//to show comparisons between an empty string. Then, we compare the value of one character from s to every other character in t to find matches, if a match
+//is found, then any common subsequence from earlier prefixes can be extended by this character, we want the longest so we will choose the best which is 
+//(i-1, j-1) plus the matching character for the current cell, That’s why we go diagonally and add 1. If a match isn't found, we cannot keep both subsequences
+//so we must drop 1, to choose which one, we have to choose the best subsequence which can be determined by comparing dp[i-1][j], dp[i][j-1], one is the largest
+//subsequence from s[0] to s[i - 2] and t[0] to t[j - 1] while the other is from s[0] to s[i - 1] and t[0] to t[j - 2]. So obviously, we will choose the largest
+//subsequence between the two of them e.g. s = "abeed" and t = "abued", at the letter e (index = 3), we will take max subsequence between s[0] to s[2] and 
+//between t[0] to t[3], this will give us a length of 3 as opposed to 2 when comparing it the other way around.
