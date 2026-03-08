@@ -59,3 +59,6 @@ public:
 //        TRIGGER: j > idx (1>0) and candidates[1] == candidates[0].
 //
 //        Result: Skip! Because [1, ...] was already handled when we picked the first 1.
+//
+//
+//i.e. Try every possible combination at every index, after checking all combinations, pop it and move onto the next
