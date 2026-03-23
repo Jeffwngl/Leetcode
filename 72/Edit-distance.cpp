@@ -35,3 +35,10 @@ public:
         return dp[n][m];
     }
 };
+
+// for instance, word1 = "horse" and word2 = "ros"
+// at i = 3 and j = 3, we have "hor" and "ros",
+// for the delete case, we use i - 1 and j to get "ho" and "ros",
+// dp[i - 1][j] represents the minimum cost to get "ho" to "ros",
+// then we add 1 to delete "r" from "hor" to get closer to "ros"
+// similar case for insert
